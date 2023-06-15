@@ -1,0 +1,51 @@
+{
+    "products":[
+        {
+            "name": "Mocaccino",
+            "id":1,
+            "price": 990,
+            "description": "Café expresso com calda de chocolate, pouco leite e espuma",
+            "flags": [
+                "tradicional",
+                "com leite"
+            ],
+            "availableQuantity": 100,
+            "productImage": "/src/assets/product-images/Mocaccino.png"
+        },
+        {
+            "name": "Expresso tradicional",
+            "id":2,
+            "price": 490,
+            "description": "O tradicional café feito com água quente e grãos moídos",
+            "flags": [
+                "tradicional",
+                "com leite"
+            ],
+            "availableQuantity": 100,
+            "productImage": "/src/assets/product-images/Expresso.png"
+        },
+        {
+            "name": "Irish Coffee",
+            "id":3,
+            "price": 1990,
+            "description": "Bebida a base de café, uísque irlandês, açúcar e chantilly",
+            "flags": [
+                "especial"
+            ],
+            "availableQuantity": 100,
+            "productImage": "/src/assets/product-images/Irish.png"
+        },
+        {
+            "name": "Cubano",
+            "id": 4,
+            "price": 1290,
+            "description": "Drink gelado de café expresso com rum, creme de leite e hortelã",
+            "flags": [
+                "especial",
+                "gelado"
+            ],
+            "availableQuantity": 100,
+            "productImage": "/src/assets/product-images/Cubano.png"
+        }
+    ]
+}
