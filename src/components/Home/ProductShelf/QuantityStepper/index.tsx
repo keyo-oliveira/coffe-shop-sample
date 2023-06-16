@@ -1,19 +1,43 @@
 import { Minus, Plus } from "@phosphor-icons/react";
 import React from "react";
 import { useForm } from "react-hook-form";
+import { useDispatch } from "react-redux";
+import { changeQuantity } from "../../../../store/quantityStepperSlice";
 
-export const QuantityStepper = () => {
-  const { handleSubmit, register, setValue, watch } = useForm();
+type quantityStepperData = {
+  quantity: number;
+};
+
+interface QuantityStepperProps {
+  productId: number;
+}
+
+export const QuantityStepper = ({ productId }: QuantityStepperProps) => {
+  const { handleSubmit, register, setValue, watch } =
+    useForm<quantityStepperData>();
+  const dispatch = useDispatch();
+
   const quantity = watch("quantity", 1);
 
-  const onSubmit = (data: any) => console.log(data);
+  const handleDispatch = () => {
+    dispatch(
+      changeQuantity({
+        id: productId,
+        quantity,
+      })
+    );
+  };
+
+  const onSubmit = (data: quantityStepperData) => {
+    handleDispatch();
+  };
 
   const incrementQuantity = () => {
-    setValue("quantity", parseInt(quantity) + 1);
+    setValue("quantity", quantity + 1);
   };
 
   const decrementQuantity = () => {
-    setValue("quantity", parseInt(quantity) - 1);
+    setValue("quantity", quantity - 1);
   };
 
   return (

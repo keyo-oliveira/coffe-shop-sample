@@ -3,20 +3,24 @@ import { Router } from "./router";
 import "./index.css";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { IntlProvider } from "react-intl";
+import { Provider } from "react-redux";
+import store from "./store";
 
 const queryClient = new QueryClient();
 
 function App() {
   return (
-    <IntlProvider locale="pt-br">
-      <QueryClientProvider client={queryClient}>
-        <BrowserRouter>
-          <div className="App">
-            <Router />
-          </div>
-        </BrowserRouter>
-      </QueryClientProvider>
-    </IntlProvider>
+    <Provider store={store}>
+      <IntlProvider locale="pt-br">
+        <QueryClientProvider client={queryClient}>
+          <BrowserRouter>
+            <div className="App">
+              <Router />
+            </div>
+          </BrowserRouter>
+        </QueryClientProvider>
+      </IntlProvider>
+    </Provider>
   );
 }
 

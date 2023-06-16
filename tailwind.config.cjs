@@ -21,6 +21,7 @@ module.exports = {
         'light-orange': '#F1E9C9',
         'light-purple': '#EBE5F9',
         'brand-dark-purple': '#4B2995',
+        'brand-yellow-dark':'#C47F17',
         'base-button': '#E6E5E5',
         'base-card':'#F3F2F2',       
         'base-input':"#EDEDED5C"

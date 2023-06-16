@@ -7,7 +7,7 @@ import { ProductTag } from "./ProductTag";
 import { ProductTitle } from "./ProductTitle";
 import { QuantityStepper } from "./QuantityStepper";
 
-export const ProductShelf = (product: Product ) => {
+export const ProductShelf = (product: Product) => {
   return (
     <section className="shelf__container w-[16rem] flex items-center justify-center flex-col bg-base-card rounded-md h-[310px] pl-2 pr-2">
       <div className="shelf__image-container w-[7.5rem]">
@@ -28,8 +28,8 @@ export const ProductShelf = (product: Product ) => {
 
       <div className="shelf__footer-container flex items-center justify-center gap-3 mt-8 pb-6">
         <ProductPrice price={product.price} />
-        <QuantityStepper />
-        <AddToCartButton />
+        <QuantityStepper productId={product.id} />
+        <AddToCartButton id={product.id} name={product.name} price={product.price} productImage={product.productImage} />
       </div>
     </section>
   );
