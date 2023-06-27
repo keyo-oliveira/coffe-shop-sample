@@ -1,8 +1,8 @@
 import { Minus, Plus } from "@phosphor-icons/react";
-import React from "react";
 import { useForm } from "react-hook-form";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { changeQuantity } from "../../../../store/quantityStepperSlice";
+import { RootState } from "../../../../store";
 
 type quantityStepperData = {
   quantity: number;
@@ -10,14 +10,20 @@ type quantityStepperData = {
 
 interface QuantityStepperProps {
   productId: number;
+  style?: string;
 }
 
-export const QuantityStepper = ({ productId }: QuantityStepperProps) => {
-  const { handleSubmit, register, setValue, watch } =
-    useForm<quantityStepperData>();
+export const QuantityStepper = ({ productId, style }: QuantityStepperProps) => {
+  const { handleSubmit, register, watch } = useForm<quantityStepperData>();
   const dispatch = useDispatch();
+  const quantitySate = useSelector((state: RootState) => state.quantity);
 
-  const quantity = watch("quantity", 1);
+  const productFromState = quantitySate.find(
+    (product) => product.id === productId
+  );
+  const quantityFromState = productFromState?.quantity;
+
+  const quantity = watch("quantity", quantityFromState ?? 1);
 
   const handleDispatch = () => {
     dispatch(
@@ -28,20 +34,30 @@ export const QuantityStepper = ({ productId }: QuantityStepperProps) => {
     );
   };
 
-  const onSubmit = (data: quantityStepperData) => {
+  const onSubmit = () => {
     handleDispatch();
   };
 
   const incrementQuantity = () => {
-    setValue("quantity", quantity + 1);
+    dispatch(
+      changeQuantity({
+        id: productId,
+        quantity: quantity + 1,
+      })
+    );
   };
 
   const decrementQuantity = () => {
-    setValue("quantity", quantity - 1);
+    dispatch(
+      changeQuantity({
+        id: productId,
+        quantity: quantity - 1,
+      })
+    );
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <form onSubmit={handleSubmit(onSubmit)} className={`${style}`}>
       <div className="quantity-stepper__container flex items-center justify-center ">
         <button
           className="quantity-stepper__minus-button bg-base-button pl-2 h-9 rounded-l-lg"

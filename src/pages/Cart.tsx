@@ -7,7 +7,7 @@ export const Cart = () => {
   return (
     <>
       <Header />
-      <div className="cart__container max-w-6xl m-auto">
+      <div className="cart__container max-w-6xl m-auto grid">
         <Address />
         <Payment />
         <Items />

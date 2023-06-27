@@ -3,15 +3,16 @@ import { FormattedNumber } from "react-intl";
 
 interface ProductPriceProps {
     price: number
+    style?: string
 }
 
-export const ProductPrice = ({price}: ProductPriceProps) => {
+export const ProductPrice = ({price, style}: ProductPriceProps) => {
     if(!price) return null
 
     const parsedPrice = price / 100
 
     return (
-        <div className="product-price__container">
+        <div className={`product-price__container ${style}`}>
             <span className="product-price__currency text-xs font-bold text-base-text font-baloo">
                R$              
             </span>

@@ -1,8 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+const initialStateValue: QuantityStepperSlice[] = []
+
 const quantitySlice = createSlice({
   name: "quantity",
-  initialState: [],
+  initialState: initialStateValue,
   reducers: {
     changeQuantity(
       state: QuantityStepperSlice[],
