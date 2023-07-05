@@ -2,10 +2,11 @@ import React from "react";
 import { ShoppingCart } from "@phosphor-icons/react";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { RootState } from "../../../store";
 
 export const MiniCart = () => {
-  const cartState = useSelector((state: any) => state.cart);
-  const currentCartItems = cartState.length;
+  const cartState = useSelector((state: RootState) => state.cart);
+  const currentCartItems = cartState.items.length;
   return (
     <Link
       to="/cart"

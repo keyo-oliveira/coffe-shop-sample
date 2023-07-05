@@ -15,6 +15,7 @@ module.exports = {
         'base-text':'#574F4D',
         'base-subtitle':'#403937',
         'brand-yellow-dark':'#C47F17',
+        'brand-yellow':'#DBAC2C',
         'base-label':'#8D8686'
       },
       backgroundColor: {
@@ -23,9 +24,9 @@ module.exports = {
         'brand-dark-purple': '#4B2995',
         'brand-yellow-dark':'#C47F17',
         'base-button': '#E6E5E5',
-        'base-card':'#F3F2F2',       
-        'base-input':"#EDEDED5C"
-      },     
+        'base-card':'#F3F2F2',
+        'base-input':"#EDEDED"
+      },
     },
   },
   plugins: [],

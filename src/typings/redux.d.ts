@@ -4,3 +4,9 @@ interface QuantityStepperSlice {
   }
 
 
+  interface CartState {
+    items: Array<Items>;
+    address: Partial<CartAddress>;
+  }
+
+
