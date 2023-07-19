@@ -1,8 +1,8 @@
 import React, { useContext, createContext } from "react";
 import { useQuery } from "react-query";
-import { getProduct } from "./utils";
+import { getProduct } from "../../utils";
 
-interface ProductContextProps { 
+interface ProductContextProps {
   data: maybeProduct[]  | undefined;
   isLoading: boolean;
   error: unknown;

@@ -7,6 +7,7 @@ import { RootState } from "../../../store";
 export const MiniCart = () => {
   const cartState = useSelector((state: RootState) => state.cart);
   const currentCartItems = cartState.items.length;
+
   return (
     <Link
       to="/cart"

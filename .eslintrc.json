@@ -1,0 +1,7 @@
+{
+  "extends": [
+    "eslint:recommended",
+    "@rocketseat/eslint-config/react"
+  ],
+  "root": true
+}
