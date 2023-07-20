@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { Logo } from "./Logo";
 import { MiniCart } from "./MiniCart";
 import { Region } from "./Region";
+import { RegionContextProvider } from "../../contexts/RegionContext";
 
 export const Header = () => {
   return (
@@ -10,7 +11,9 @@ export const Header = () => {
         <Logo />
       </Link>
       <div className="header__region-cart-container flex justify-between items-center gap-2">
-        <Region />
+       <RegionContextProvider >
+         <Region />
+       </RegionContextProvider>
         <MiniCart />
       </div>
     </header>
