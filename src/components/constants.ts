@@ -1,1 +1,0 @@
-export const removeSpecialCaracteresRegex = /^a-zA-Z0-9 ]/g
